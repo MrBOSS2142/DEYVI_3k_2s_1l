@@ -10,11 +10,15 @@ $(document).ready(function() {
     $(this).css({ fill: "#6E82D0" });
   });
 
-  $(".st0").mouseleave(function() {
-    $(this).css({ fill: "#7C7C7C", transition: "0.2s" });
+  $(".st0").mouseleave(() => {
+    $(".st0").css({ fill: "#7C7C7C", transition: "0.2s" });
   });
 });
 
 $(document).ready(() => {
-  $(".st0").hover(() => $(".gerb").attr("src", "img/tY3OiJm.jpg"));
+  $("#Amazonas").hover(() => {
+    $(".gerb").attr("src", "img/Escudo_amazonasregion.png");
+    $(".name").html("Amazonas");
+    $(".name_rus").html("Амасонас");
+  });
 });
