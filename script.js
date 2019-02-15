@@ -15,6 +15,21 @@ $(document).ready(function() {
   });
 });
 
+$(document).ready(function() {
+  $(".st0").hover(() =>
+    $("#info").css({ margin: "100px 100px 0px 0px", transition: "1s" })
+  );
+
+  $(".st0").mouseleave(() =>
+    $("#info").css({ margin: "100px -530px 0px 0px", transition: "1s" })
+  );
+});
+
+$(document).ready(function() {
+  $(".st0").hover(() => $(".Peru").hide(500));
+  $(".st0").mouseleave(() => $(".Peru").fadeIn(30));
+});
+
 $(document).ready(() => {
   $("#Amazonas").hover(() => {
     $(".gerb").attr("src", "img/Escudo_amazonasregion.png");
