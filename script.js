@@ -26,8 +26,8 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-  $(".st0").hover(() => $(".Peru").hide(500));
-  $(".st0").mouseleave(() => $(".Peru").fadeIn(30));
+  $("#img").hover(() => $(".Peru").fadeOut(200));
+  $("#img").mouseleave(() => $(".Peru").fadeIn(200));
 });
 
 $(document).ready(() => {
