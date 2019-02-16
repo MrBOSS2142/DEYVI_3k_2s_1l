@@ -5,6 +5,109 @@
 //   );
 // });
 
+var deparmnets = {
+  Amazonas: {
+    gerb: "img/Escudo_amazonasregion.png",
+    name: "Amazonas",
+    name_rus: "Амасонас",
+    temperature: "25-27 °C",
+    climate: "Тропический",
+    water: "Река Журуа"
+  },
+
+  Loreto: {
+    gerb: "img/Loreto.jpg",
+    name: "Loreto",
+    name_rus: "Лорето",
+    temperature: "17-20 °C",
+    climate: "Тропический",
+    water: "Реки Амазонка, Мараньон"
+  },
+
+  Cajamarca: {
+    gerb: "img/Cajamarca.jpg",
+    name: "Cajamarca",
+    name_rus: "Кахамарка",
+    temperature: "14 °C",
+    climate: "Умеренный",
+    water: "Реки Мараньон, Чотано и Уанкабамба"
+  },
+
+  Piura: {
+    gerb: "img/Piura.png",
+    name: "Piura",
+    name_rus: "Пьюра",
+    temperature: "20-27 °C",
+    climate: "Засушливый",
+    water: "Реки Чира, Пьюха"
+  },
+
+  San_Martín: {
+    gerb: "img/San_Martin.jpg",
+    name: "San Martín",
+    name_rus: "Сан-Мартин",
+    temperature: "от 18 °C в горах до 29 °C на территории низменности",
+    climate: "Засушливый",
+    water: "Река Чира"
+  },
+
+  Tumbes: {
+    gerb: "img/Tumbes.jpg",
+    name: "Tumbes",
+    name_rus: "Тумбес",
+    temperature: "25-28 °C",
+    climate:
+      "Жаркий и влажный тропический на севере и в центре, сухой тропический на юге",
+    water: "Река Тумбес"
+  },
+
+  Lambayeque: {
+    gerb: "img/Lambayeque.png",
+    name: "Lambayeque",
+    name_rus: "Ламбаеке",
+    temperature: "20-24 °C",
+    climate: "Океанический",
+    water: "Озеро Reservorio de Tinajones"
+  },
+
+  Ucayali: {
+    gerb: "img/Ucayali.jpg",
+    name: "Lambayeque",
+    name_rus: "Ламбаеке",
+    temperature: "20-24 °C",
+    climate: "Океанический",
+    water: "Реки Укаяли, Пурус и Агуайтия. Крупнейшее озеро — Яринакоча"
+  },
+
+  La_Libertad: {
+    gerb: "img/La_Libertad.svg.png",
+    name: "La Libertad",
+    name_rus: "Ла-Либертад",
+    temperature: "22-24 °C",
+    climate: "Тропический",
+    water: "Реки Rio Chicama, Либертад"
+  },
+
+  Huánuco: {
+    gerb: "img/Huanuco.png",
+    name: "Huánuco",
+    name_rus: "Уануко",
+    temperature: "19-25 °C",
+    climate: "На западе сухой и прохладный, на востоке влажный тропический",
+    water: "Реки Мараньон, Пачитея и Уальяга"
+  },
+
+  Ancash: {
+    gerb: "img/img/Ancash.jpg",
+    name: "Ancash",
+    name_rus: "Анкаш",
+    temperature: "21-25 °C",
+    climate: "Тропический",
+    water: "Река Санта. Озера Лагуна Конокоча, Аугоскоча"
+  }
+};
+
+var id_dep = "";
 $(document).ready(function() {
   $(".st0").hover(function() {
     $(this).css({ fill: "#6E82D0" });
@@ -21,7 +124,7 @@ $(document).ready(function() {
   );
 
   $(".st0").mouseleave(() =>
-    $("#info").css({ margin: "100px -530px 0px 0px", transition: "1s" })
+    $("#info").css({ margin: "100px -570px 0px 0px", transition: "1s" })
   );
 });
 
@@ -31,6 +134,10 @@ $(document).ready(function() {
 });
 
 $(document).ready(() => {
+  $(".st0").hover(function() {
+    console.log(this.id);
+  });
+
   $("#Amazonas").hover(() => {
     $(".gerb").attr("src", "img/Escudo_amazonasregion.png");
     $(".name").html("Amazonas");
@@ -38,103 +145,5 @@ $(document).ready(() => {
     $(".temperature").html("25-27 °C");
     $(".climate").html("Тропический");
     $(".water").html("Река Журуа");
-  });
-
-  $("#Loreto").hover(() => {
-    $(".gerb").attr("src", "img/Loreto.jpg");
-    $(".name").html("Loreto");
-    $(".name_rus").html("Лорето");
-    $(".temperature").html("17 — 20 °C");
-    $(".climate").html("Тропический");
-    $(".water").html("Реки Амазонка, Мараньон");
-  });
-
-  $("#Cajamarca").hover(() => {
-    $(".gerb").attr("src", "img/Cajamarca.jpg");
-    $(".name").html("Cajamarca");
-    $(".name_rus").html("Кахамарка");
-    $(".temperature").html("14 °C");
-    $(".climate").html("Умеренный");
-    $(".water").html("Реки Мараньон, Чотано и Уанкабамба");
-  });
-
-  $("#Piura").hover(() => {
-    $(".gerb").attr("src", "img/Piura.png");
-    $(".name").html("Piura");
-    $(".name_rus").html("Пьюра");
-    $(".temperature").html("20-27 °C");
-    $(".climate").html("Засушливый");
-    $(".water").html("Реки Чира, Пьюха");
-  });
-
-  $("#San_Martín").hover(() => {
-    $(".gerb").attr("src", "img/Piura.png");
-    $(".name").html("San Martín");
-    $(".name_rus").html("Сан-Мартин");
-    $(".temperature").html(
-      "от 18 °C в горах до 29 °C на территории низменности"
-    );
-    $(".climate").html("Засушливый");
-    $(".water").html("Реки Чира, Пьюха");
-  });
-
-  $("#Tumbes").hover(() => {
-    $(".gerb").attr("src", "img/Tumbes.jpg");
-    $(".name").html("Tumbes");
-    $(".name_rus").html("Тумбес");
-    $(".temperature").html("25-28 °C");
-    $(".climate").html(
-      "Жаркий и влажный тропический на севере и в центре, сухой тропический на юге"
-    );
-    $(".water").html("Реки Тумбес");
-  });
-
-  $("#Lambayeque").hover(() => {
-    $(".gerb").attr("src", "img/Lambayeque.png");
-    $(".name").html("Lambayeque");
-    $(".name_rus").html("Ламбаеке");
-    $(".temperature").html("20-24 °C");
-    $(".climate").html("Океанический");
-    $(".water").html("Озеро Reservorio de Tinajones");
-  });
-
-  $("#Ucayali").hover(() => {
-    $(".gerb").attr("src", "img/Ucayali.jpg");
-    $(".name").html("Ucayali");
-    $(".name_rus").html("Укаяли");
-    $(".temperature").html("23-25 °C");
-    $(".climate").html("Океанический");
-    $(".water").html(
-      "Реки Укаяли, Пурус и Агуайтия. Крупнейшее озеро — Яринакоча"
-    );
-  });
-
-  $("#La_Libertad").hover(() => {
-    $(".gerb").attr("src", "img/La_Libertad.svg.png");
-    $(".name").html("La Libertad");
-    $(".name_rus").html("Ла-Либертад");
-    $(".temperature").html("22-24 °C");
-    $(".climate").html("Тропический");
-    $(".water").html("Реки Rio Chicama, Либертад");
-  });
-
-  $("#Huánuco").hover(() => {
-    $(".gerb").attr("src", "img/Huanuco.png");
-    $(".name").html("Huánuco");
-    $(".name_rus").html("Уануко");
-    $(".temperature").html("19-25 °C");
-    $(".climate").html(
-      "На западе сухой и прохладный, на востоке влажный тропический"
-    );
-    $(".water").html("Реки Мараньон, Пачитея и Уальяга");
-  });
-
-  $("#Ancash").hover(() => {
-    $(".gerb").attr("src", "img/Ancash.jpg");
-    $(".name").html("Ancash");
-    $(".name_rus").html("Анкаш");
-    $(".temperature").html("21-25 °C");
-    $(".climate").html("Тропический");
-    $(".water").html("Река Санта. Озера Лагуна Конокоча, Аугоскоча");
   });
 });
