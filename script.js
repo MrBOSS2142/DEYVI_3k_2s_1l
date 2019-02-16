@@ -5,7 +5,7 @@
 //   );
 // });
 
-var deparmnets = {
+var departments = {
   Amazonas: {
     gerb: "img/Escudo_amazonasregion.png",
     name: "Amazonas",
@@ -98,7 +98,7 @@ var deparmnets = {
   },
 
   Ancash: {
-    gerb: "img/img/Ancash.jpg",
+    gerb: "img/Ancash.jpg",
     name: "Ancash",
     name_rus: "Анкаш",
     temperature: "21-25 °C",
@@ -133,17 +133,14 @@ $(document).ready(function() {
   $("#img").mouseleave(() => $(".Peru").fadeIn(200));
 });
 
-$(document).ready(() => {
+$(document).ready(function() {
   $(".st0").hover(function() {
-    console.log(this.id);
-  });
-
-  $("#Amazonas").hover(() => {
-    $(".gerb").attr("src", "img/Escudo_amazonasregion.png");
-    $(".name").html("Amazonas");
-    $(".name_rus").html("Амасонас");
-    $(".temperature").html("25-27 °C");
-    $(".climate").html("Тропический");
-    $(".water").html("Река Журуа");
+    id_dep = this.id;
+    $(".gerb").attr("src", departments[id_dep]["gerb"]);
+    $(".name").html(departments[id_dep]["name"]);
+    $(".name_rus").html(departments[id_dep]["name_rus"]);
+    $(".temperature").html(departments[id_dep]["temperature"]);
+    $(".climate").html(departments[id_dep]["climate"]);
+    $(".water").html(departments[id_dep]["water"]);
   });
 });
