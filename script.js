@@ -108,6 +108,7 @@ var departments = {
 };
 
 var id_dep = "";
+
 $(document).ready(function() {
   $(".st0").hover(function() {
     $(this).css({ fill: "#6E82D0" });
@@ -133,7 +134,7 @@ $(document).ready(function() {
   $("#img").mouseleave(() => $(".Peru").fadeIn(200));
 });
 
-$(document).ready(function() {
+$(document).ready(() => {
   $(".st0").hover(function() {
     id_dep = this.id;
     $(".gerb").attr("src", departments[id_dep]["gerb"]);
